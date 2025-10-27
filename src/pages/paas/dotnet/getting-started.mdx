@@ -1,75 +1,200 @@
-import Layout from "@/components/Layout";
-import Button from "@/components/Common/button";
-import Section from "@/components/Common/section";
-import Alert from "@/components/Common/alert";
-import Tabs from "@/components/Common/tab";
-import Step from "@/components/Common/step";
-import Card from "@/components/Common/card";
-import Important from "@/components/Common/important";
-import Highlight from "@/components/Common/highlight";
-import Link from "next/link";
-import PlatformIcon from "@/components/Common/icons";
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تاسیسات و تعمیرات پمپ آب - خدمات سریع و تخصصی</title>
+    <meta name="description" content="ارائه خدمات تخصصی تاسیسات، نصب و تعمیرات انواع پمپ آب خانگی و صنعتی. عیب یابی سریع، سرویس و نگهداری. تماس بگیرید!">
+    <meta name="keywords" content="تعمیر پمپ آب, تاسیسات, پمپ آب, خدمات پمپ, نصب پمپ, سرویس پمپ, تهران, پمپ خانگی, پمپ صنعتی">
+    <style>
+        @font-face {
+            font-family: 'Vazirmatn';
+            src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            font-family: 'Vazirmatn', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.8;
+            direction: rtl;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+        .header p {
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 25px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.08);
+        }
+        h2 {
+            color: #007bff;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        .section-text {
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .service-item {
+            background-color: #e9f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-right: 5px solid #007bff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .service-item h3 {
+            color: #0056b3;
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+        .service-item p {
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        .contact-section {
+            background-color: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 40px;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .contact-section h2 {
+            color: #007bff;
+            margin-bottom: 15px;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .contact-section .phone-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #28a745;
+            margin: 20px 0;
+            display: block;
+            text-decoration: none;
+        }
+        .contact-section .phone-number:hover {
+            color: #218838;
+        }
+        .contact-section p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .contact-section a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: #343a40;
+            color: white;
+            font-size: 0.9em;
+        }
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            .header p {
+                font-size: 1em;
+            }
+            .container {
+                margin: 20px auto;
+                padding: 15px;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            .contact-section .phone-number {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>خدمات تخصصی تاسیسات و تعمیرات پمپ آب</h1>
+        <p>با کادری مجرب و تجهیزات مدرن، آماده ارائه بهترین خدمات به شما هستیم</p>
+    </div>
 
-import {
-  GoContainer,
-  GoDatabase,
-  GoRocket,
-  GoServer,
-  GoMail,
-  GoGlobe,
-  GoArrowLeft,
-} from "react-icons/go";
+    <div class="container">
+        <h2>چرا ما را انتخاب کنید؟</h2>
+        <p class="section-text">
+            ما با سابقه درخشان در زمینه خدمات تاسیساتی و تعمیرات انواع پمپ آب، رضایت مشتریان را اولویت اصلی خود قرار داده‌ایم. سرعت، دقت، کیفیت و قیمت مناسب، چهار ستون اصلی خدمات ما هستند. اعتماد شما، اعتبار ماست.
+        </p>
 
-import Head from "next/head";
+        <h2>خدمات ما</h2>
+        <div class="service-grid">
+            <div class="service-item">
+                <h3>نصب و راه‌اندازی پمپ آب</h3>
+                <p>نصب تخصصی انواع پمپ‌های خانگی، صنعتی و کشاورزی با رعایت استانداردها.</p>
+            </div>
+            <div class="service-item">
+                <h3>تعمیرات تخصصی پمپ آب</h3>
+                <p>عیب‌یابی دقیق و تعمیر انواع پمپ‌های کفکش، لجن‌کش، سانتریفیوژ، شناور و جتی.</p>
+            </div>
+            <div class="service-item">
+                <h3>سرویس و نگهداری دوره‌ای</h3>
+                <p>افزایش طول عمر پمپ و کاهش هزینه‌های احتمالی با سرویس‌های منظم و پیشگیرانه.</p>
+            </div>
+            <div class="service-item">
+                <h3>مشاوره و فروش پمپ آب</h3>
+                <p>راهنمایی در انتخاب بهترین پمپ متناسب با نیاز و بودجه شما، همراه با گارانتی.</p>
+            </div>
+            <div class="service-item">
+                <h3>عیب‌یابی و رفع ایراد تاسیسات</h3>
+                <p>شناسایی و رفع سریع مشکلات سیستم‌های آبرسانی، لوله‌کشی و تاسیسات ساختمان.</p>
+            </div>
+            <div class="service-item">
+                <h3>خدمات فوری و اورژانسی</h3>
+                <p>حضور سریع در محل برای رفع مشکلات اضطراری پمپ و تاسیسات شما.</p>
+            </div>
+        </div>
 
-<Layout>
-<Head>
-<title>مستندات شروع به کار با NET. - لیارا</title>
-<meta property="og:title" content="مستندات خدمات رایانش ابری لیارا" />
-<meta property="og:description" content="مستندات شروع به کار با پلتفرم دات‌نت در لیارا"  />
-</Head>
-# شروع به کار با پلتفرم NET.
-<hr className="mb-2" />
+        <div class="contact-section">
+            <h2>برای مشاوره و درخواست خدمات، همین الان با ما تماس بگیرید:</h2>
+            <a href="tel:+989145339579 class="phone-number">۰۹۱۲-۳۴۵-۶۷۸۹</a>
+          ساعات کاری: شبانه روزی   ب</p>
+            <p>ایمیل: aliterkaman1234@gmail.com
+            <p>آدرس اردبیل بزرگ راه میلاد ۱۲</p>
+        </div>
+    </div>
 
-<a href="https://dotnet.microsoft.com/en-us/" className="text-[#2196f3] ">NET.</a> یک پلتفرم توسعه نرم‌افزار است که توسط مایکروسافت توسعه یافته و پشتیبانی می‌شود. این فریم‌ورک شامل مجموعه‌ای از کتابخانه‌ها و ابزارها برای ساخت انواع برنامه‌ها، از جمله برنامه‌های وب، دسکتاپ، موبایل و سرویس‌های وب است.
-<div className="h-2" />
-NET. از زبان‌های مختلف برنامه‌نویسی مانند C# , F# , Visual Basic پشتیبانی می‌کند و قابلیت چندپلتفرمی دارد، به طوری که می‌توان برنامه‌ها را بر روی ویندوز، لینوکس و macOS اجرا کرد.
-شما می‌توانید در سریع‌ترین زمان ممکن و به سادگی چند کلیک یا اجرای چند دستور ساده، برنامه خود را در لیارا مستقر کنید. در ادامه بخوانید:
-
-<br />
-
-<div className="grid md:grid-cols-2 gap-4">
-            {[
-    {
-      text: 'استقرار سریع یک برنامه NET. در لیارا',
-      link: './quick-start',
-    },
-    {
-      text: 'استقرار قدم به قدم برنامه‌های NET. در لیارا',
-      link: './how-tos/create-app',
-    },
-  ].map(item =>
-              <Link href={item.link}>
-                <Card className="flex cursor-pointer w-full items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <h4>
-                      {item.text}
-                    </h4>
-                  </div>
-                  <GoArrowLeft className="ml-1" />
-                </Card>
-              </Link>
-            )}
-          </div>
-
-<br />
-
-<Alert variant="success">
-همچنین بخوانید:
-<Link href='./related-links' className="text-[#2196f3] ">
- لینک‌های مرتبط با پلتفرم NET.
-</Link>
-</Alert>
-<br />
-
-</Layout>
+    <div class="footer">
+        <p>&copy; 2023 کلیه حقوق محفوظ است. (نام کسب و کار شما)</p>
+    </div>
+</body>
+</html>
